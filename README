@@ -1,0 +1,17 @@
+Install Coq and OCaml.
+
+Download CompCert 2.4 from http://compcert.inria.fr/ and unpack it here.
+Rename its directory to compcert (or create a symlink).
+
+In the compcert directory:
+
+  ./configure ia32
+  make
+  make clightgen
+  make documentation
+
+Get back to the parent directory and run ./compile_ditio.  Ignore the warnings.
+
+Run ./vtests/test_genasm.native and you should see some output.
+Write it out to an assembly file to pass it to the query processor:
+./vtests/test_genasm.native > camera_audit_backend.S
